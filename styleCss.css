@@ -1,0 +1,87 @@
+body {
+  margin: 0; /* ho messo 0 perche' cosi non ho spazio prima del titolo iniziale */
+  color: #444; /* e' il nero */
+  background-color: #f0f0f0; /*sfondo ambrato */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Helvetica Neue e' tra virgolette perche' e' un custom font */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, Times, serif;
+  padding-top: 20px;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+p {
+  margin-bottom
+}
+
+p, li  {
+  line-height: 1.7; /* interline */
+  font-size: 16px;
+}
+
+header {
+  position: fixed; /* con qst comando non faccio sparire qst oggetto. quindi scrollando rimane con la pagine */
+  width: 100%; /* devo mettere qst perche altrimenti non coprirebbe tutta la pagina in larghezza */
+  background-color: #555;
+  padding: 40px 0; /* padding definisce, all'interno di dove sono, gli spazi vuoto oltre il testo */
+}
+
+header > * { /* ho messo l * perche' cosi lo applico a tutto cio' che e' nell header * fino ad 1 livello deeper */
+  text-align: center;
+  color: #f0f0f0;
+}
+
+.brand { /* con il .nome_della_classe individuo quello che voglio modificare */
+  position: absolute; /* absolute non lo ridimensione allo spazio in cui e' attribuito*/
+  width: 115px;
+  height: 115px;
+  left: 40px;
+  background-image: url("https://pbs.twimg.com/profile_images/3087236754/91e379b7e0006d38ee0526946a38a1ea_400x400.png");
+  background-size: cover; /* mi permette di ridimensionare l img nella dimensione specificata successivamente */
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.brand:after {
+  content: "Ciao!";
+   /*mi permette di aggiungere qualcosa dopo esser passato con il mouse sopra l*/
+   /*oggetto. Servono il .brand:after e .brand:hover:after */
+  position: absolute; /* mettendo anche qui absolute, si riferira' al suo elemento relativo, ovvero il logo di Makers */
+  width: 60px;
+  height: 60px;
+  right: -60px;
+  background: #666;
+  color: #444;
+  line-height: 60px; /* allinea il contenuto del box che ho creato. Con qst 60px lo allineo al centro dello stesso */
+  border-top-left-radius: 100%;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 100%;
+
+  display: none;
+}
+
+.brand:hover:after {
+  display: block;
+}
+
+header > h1 { /* il > sta per 'target' ovvero applica a quello che ti indico */
+  letter-spacing: 2px; /* spazio tra le lettere */
+}
+
+aside {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  top: -28px;
+  position: relative; /* se non trovassi l'oggetto che sto cambiando vuol dire che e' fuori dalla pag. Gestiscilo con top, left & right */
+  font-size: 16px;
+}
+
+main {
+  max-width: 580px;
+  margin-left: auto;/* potevo fare: margin: nord, sud, est, west*/
+  margin-right: auto;
+  padding-top: 240px;
+}
